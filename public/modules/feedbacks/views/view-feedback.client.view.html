@@ -1,8 +1,7 @@
 <section data-ng-controller="FeedbacksController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1>{{feedback.content}}</h1>
+		<h1>{{feedback.title}}</h1>
 	</div>
-	<h2>{{feedback.title}}</h2>
 	<div class="pull-right" data-ng-show="authentication.user._id == feedback.user._id">
 		<a class="btn btn-primary" href="/#!/feedbacks/{{feedback._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
@@ -14,4 +13,7 @@
 	<small>
 		<em class="text-muted">Posted on {{feedback.created | date:'mediumDate'}} by {{feedback.user.displayName}}</em>
 	</small>
+	<div class="lead">
+		<p>{{feedback.content}}</p>
+	</div>
 </section>
