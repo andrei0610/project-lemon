@@ -8,60 +8,61 @@ Project-lemon este o aplicatie web dezvoltata in intregime in JavaScript cu care
 Pentru a putea dezvolta aplicatia trebuie sa ai instalate urmatoarele:
 * [Node.js](http://www.nodejs.org)
 
-```bash
-# OSX
-$ brew install node
+  ```bash
+  # OSX
+  $ brew install node
 
-#Ubuntu
-$ sudo apt-get install nodejs
-```
+  #Ubuntu
+  $ sudo apt-get install nodejs
+  ```
 * [MongoDB](http://www.mongodb.org)
 
-```
-# OSX
-$ brew install mongodb
+  ```
+  # OSX
+  $ brew install mongodb
 
-# Ubuntu:
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-$ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
-$ sudo apt-get update
-$ sudo apt-get install mongodb-10gen
-$ sudo mongod --config /etc/mongodb.conf
-```
+  # Ubuntu:
+  $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  $ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+  $ sudo apt-get update
+  $ sudo apt-get install mongodb-10gen
+  $ sudo mongod --config /etc/mongodb.conf
+  ```
 * [Bower](http://bower.io)
 
-```
-$ npm install -g bower
-```
+  ```
+  $ npm install -g bower
+  ```
 
 * [Grunt](http://www.www.gruntjs.com)
 
-```
-$ sudo npm install -g grunt-cli
-```
+  ```
+  $ sudo npm install -g grunt-cli
+  ```
 ## Cum poti contribui
 Pentru a contribui ai nevoie de [Node.js](http://www.nodejs.org) instalat.
 
 Ca sa contribui:
+
 1. Clonezi proiectul
 
-```bash
-$ git clone https://github.com/andrei0610/project-lemon.git
-```
+  ```bash
+  $ git clone https://github.com/andrei0610/project-lemon.git
+  ```
 2. Navighezi in folderul lui
 
-```bash
-$ cd project-lemon
-```
+  ```bash
+  $ cd project-lemon
+  ```
 3. Instalezi dependentele cu ajurotul `npm`
 
-```bash
-$ npm install
-```
+  ```bash
+  $ npm install
+  ```
 4. Pornesti serverul
 
-```bash
-$ grunt
+  ```bash
+  $ grunt
 ```
 Felicitari! Deschide browserul la adresa [http://localhost:3000](http://localhost:3000) pentru a o vizulaliza. La orice schimbare a fisierelor sale, [grunt](http://gruntjs.com) o sa refreshuiasca pagina pentru a vedea modificarile aduse.
 
