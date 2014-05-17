@@ -5,7 +5,7 @@
     <div class="list-group">
         <a data-ng-repeat="feedback in feedbacks" data-ng-href="#!/feedbacks/{{feedback._id}}" class="list-group-item">
             <small class="list-group-item-text">{{feedback.created | date:'medium'}} / {{feedback.user.displayName}}</small>
-            <h4 class="list-group-item-heading">{{feedback.name}}</h4>
+            <h4 class="list-group-item-heading">{{feedback.title}}</h4>
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!feedbacks.$resolved || feedbacks.length">

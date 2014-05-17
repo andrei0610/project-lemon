@@ -10,12 +10,17 @@ var mongoose = require('mongoose'),
  * Feedback Schema
  */
 var FeedbackSchema = new Schema({
-	name: {
+	title: {
 		type: String,
 		default: '',
-		required: 'Please fill Feedback name',
+		required: 'Titlul trebuie completat',
 		trim: true
 	},
+  content: {
+    type: String,
+    default: '',
+    trim: true
+  },
 	created: {
 		type: Date,
 		default: Date.now

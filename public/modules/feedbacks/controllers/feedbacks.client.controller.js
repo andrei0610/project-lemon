@@ -9,7 +9,8 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
         $scope.create = function() {
         	// Create new Feedback object
             var feedback = new Feedbacks({
-                name: this.name
+                title: this.title,
+                content: this.content
             });
 
             // Redirect after save
@@ -20,7 +21,8 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
 			});
 
             // Clear form fields
-            this.name = '';
+            this.title = '';
+            this.content = '';
         };
 
         // Remove existing Feedback
