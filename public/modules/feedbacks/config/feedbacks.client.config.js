@@ -4,7 +4,7 @@
 angular.module('feedbacks').run(['Menus',
 	function(Menus) {
 		// Set top bar menu items
-		Menus.addMenuItem('topbar', 'Feedbacks', 'feedbacks');
-		Menus.addMenuItem('topbar', 'New Feedback', 'feedbacks/create');
+		Menus.addMenuItem('bottombar', 'Feedbacks', 'feedbacks');
+		Menus.addMenuItem('bottombar', 'Feedback Nou', 'feedbacks/create');
 	}
 ]);
