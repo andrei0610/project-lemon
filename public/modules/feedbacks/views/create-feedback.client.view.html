@@ -1,4 +1,10 @@
-<section data-ng-controller="FeedbacksController">
+<section data-ng-controller="FeedbacksController" data-ng-hide="authentication.user">
+  <div class="page-header alert alert-danger">
+    <span><strong>Nu sunteti logat!</strong> Va rungam sa va logati <a href="#!/signin">aici</a>.</span>
+  </div>
+</section>
+
+<section data-ng-controller="FeedbacksController" data-ng-show="authentication.user">
   <div class="page-header">
     <h1>Dati-ne un feedback</h1>
   </div>
