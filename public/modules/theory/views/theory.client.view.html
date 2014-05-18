@@ -1,0 +1,16 @@
+<section data-ng-controller="TheoryController">
+	<div class="page-header">
+		<h1 class="text-center">Modul de teorie</h1>
+	</div>
+	<tabset>
+			<tab heading="Subiect 1">
+				<div ng-bind-html="subiect-1.client.view.html"></div>
+
+			</tab>
+			<tab heading="Subiect 2">
+			</tab>
+			<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+      	<div ng-bind-html="subiect-1.client.view.html"></div>
+    </tab>
+	</tabset>
+</section>
