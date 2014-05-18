@@ -50,6 +50,11 @@
 		</section>
 	</section>
 
+	<div id="footer" data-ng-include="'/modules/core/views/footer.client.view.html'" class="navbar navbar-fixed-bottom navbar-inverse">
+		<span class="text-muted">	vnasda </span>
+</div>
+
+
 	<!--Embedding The User Object-->
 	<script type="text/javascript">
 		var user = {{ user | json | safe }};
