@@ -3,14 +3,130 @@
 		<h1 class="text-center">Modul de teorie</h1>
 	</div>
 	<tabset>
-			<tab heading="Subiect 1">
-				<div ng-bind-html="subiect-1.client.view.html"></div>
+		<tab heading="Subiectul 1">
+			<h5>Subiectul I are doua exercitii bazate pe teoria limbajului
+				<button class="btn btn-default" ng-click="isCollapsedPseudocod = !isCollapsedPseudocod">Pseudocod</button>
+				si a
+				<button class="btn btn-default" ng-click="isCollapsedCplusplus = !isCollapsedCplusplus">Expresiilor C++</button>
+				.
+			</h5>
+			<div collapse="!isCollapsedPseudocod">
+				<div class="well well-lg">
+					<p>
+						echiv alg
+						operatori
+						alg elementari
+						divizibilitate
+						numere prime
+						cmmdc. alg lui euclid
+						deteminare min/max
+					</p>
+				</div>
+			</div>
+			<div collapse="!isCollapsedCplusplus">
+				<div class="well well-lg"><p>
+					tipuri de date
+					operatori
+					functii matematice
+					citirea si scrierea datelor
+					structuri
 
-			</tab>
-			<tab heading="Subiect 2">
-			</tab>
-			<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
-      	<div ng-bind-html="subiect-1.client.view.html"></div>
-    </tab>
-	</tabset>
+				</p>
+			</div>
+		</div>
+	</tab>
+	<tab heading="Subiectul 2">
+		<h5>Subiectul II cuprinde exercitii bazate pe teoria din
+			<button class="btn btn-default" ng-click="isCollapsedFunctii = !isCollapsedFunctii">Functii</button>
+			,
+			<button class="btn btn-default" ng-click="isCollapsedBacktracking = !isCollapsedBacktracking">Backtracking</button>
+			,
+			<button class="btn btn-default" ng-click="isCollapsedGrafuri = !isCollapsedGrafuri">Grafuri</button>
+			si
+			<button class="btn btn-default" ng-click="isCollapsedArbori = !isCollapsedArbori">Arbori</button>
+		</h5>
+		<div collapse="!isCollapsedPseudocod">
+			<div class="well well-lg">
+				<p>
+					echiv alg
+					operatori
+					alg elementari
+					divizibilitate
+					numere prime
+					cmmdc. alg lui euclid
+					deteminare min/max
+				</p>
+			</div>
+		</div>
+		<div collapse="!isCollapsedCplusplus">
+			<div class="well well-lg">
+				<p>
+					tipuri de date
+					operatori
+					functii matematice
+					citirea si scrierea datelor
+					structuri
+				</p>
+			</div>
+		</div>
+		<div collapse="!isCollapsedFunctii">
+			<div class="well well-lg">
+				<p>
+					echiv alg
+					operatori
+					alg elementari
+					divizibilitate
+					numere prime
+					cmmdc. alg lui euclid
+					deteminare min/max
+				</p>
+			</div>
+		</div>
+		<div collapse="!isCollapsedBacktracking">
+			<div class="well well-lg">
+				<p>
+					echiv alg
+					operatori
+					alg elementari
+					divizibilitate
+					numere prime
+					cmmdc. alg lui euclid
+					deteminare min/max
+				</p>
+			</div>
+		</div>
+		<div collapse="!isCollapsedGrafuri">
+			<div class="well well-lg">
+				<p>
+					echiv alg
+					operatori
+					alg elementari
+					divizibilitate
+					numere prime
+					cmmdc. alg lui euclid
+					deteminare min/max
+				</p>
+			</div>
+		</div>
+		<div collapse="!isCollapsedArbori">
+			<div class="well well-lg">
+				<p>
+					echiv alg
+					operatori
+					alg elementari
+					divizibilitate
+					numere prime
+					cmmdc. alg lui euclid
+					deteminare min/max
+				</p>
+			</div>
+		</div>
+
+
+	</tab>
+	<tab heading="Subiectul 3">
+	</tab>
+
+</tabset>
+
 </section>

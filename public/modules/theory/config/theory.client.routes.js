@@ -1,7 +1,8 @@
 'use strict';
 
 //Setting up route
-angular.module('theory').config(['$stateProvider',
+angular.module('theory')
+.config(['$stateProvider',
 	function($stateProvider) {
 		// Theory state routing
 		$stateProvider.
