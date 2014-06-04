@@ -258,16 +258,14 @@
             <span> Cifrele unui numar sunt determinate de la dreapta la stanga , incepand cu cifra unitatilor care este restul impartirii numarului la 10 ( n%10) .Penultima cifra poate fi aflata in mod asemanator , trunchiind numarul prin impartirea la 10(n/10) si afland restul impartirii noului numar la 10 s.a . Pasul se repeta cat timp mai exista cifre , adica numarul este diferit de 0 ( n!=0). Deoarece nu avem cum sa stim exact cate cifre are numarul , deci cati pasi vor fi necesari , deci va trebui sa folosim structura repetitiva cu test initial <b> cat timp </b> E <b> executa </b> S</b> unde E va fi conditia : n!=0</span>
 
             <pre>
-              <code>
-                intreg n , nr
-                citeste n
-                nr &lt;- 1
-                cat timp n!=0
-                nr &lt;- nr+1
-                n &lt;- [n/10]
-                sf-cat timp
-                scrie nr
-              </code>
+              intreg n , nr
+              citeste n
+              nr &lt;- 1
+              cat timp n!=0
+              nr &lt;- nr+1
+              n &lt;- [n/10]
+              sf-cat timp
+              scrie nr
             </pre>
 
 
@@ -280,16 +278,14 @@
             <span><i> nr </i> porneste de la valoarea 1 deoarece, in cazul in care n=0, instructiunile din interiorul structurii <i> cat timp .. executa </i> nu se executa. Astfel, daca la inceput <i>nr</i> are valoarea 0 programul va afisa 0 pe ecran , desi 0 este o cifra. Putem scrie programul si cu secventa repetitiva cu test finala <i> repeta ..pana cand </i></span>
 
             <pre>
-              <code>
-                intreg n,nr
-                citeste n
-                nr &lt;- 0
-                repeta
-                nr &lt;- nr+1
-                n &lt;- [n/10]
-                pana cand n=0
-                scrie nr
-              </code>
+              intreg n,nr
+              citeste n
+              nr &lt;- 0
+              repeta
+              nr &lt;- nr+1
+              n &lt;- [n/10]
+              pana cand n=0
+              scrie nr
             </pre>
           </li>
 
@@ -297,21 +293,19 @@
             <span> Un numar este palindrom daca acesta coincide cu inversul sau .<br> Exemplu: 121, 12321. Deci , pentru a determina daca un numar este palindrom , trebuie sa determinam inversul sau .Stim ca cifrele unui numar le aflam de la dreapta la stanga  , aceasta fiind si ordinea in care apar in inversul unui numar . Odata obtinuta o cifra , o vom adauga la sfarsitul inversului . Formula prin care adaugam o cifra la sfarsitul unui numar este : <br> n*10 + c , <br> unde n este numarul , iar c cifra . <br> Pentru a nu pierde valoarea numarului initial , vom folosi o copie a acestuia .</span>
 
             <pre>
-              <code>
-                intreg n , inv , copie ,c
-                citeste n
-                inv &lt;- 0
-                copie &lt;- n
-                cat timp n!= 0 executa
-                c &lt;- n%10
-                inv &lt;- inv*10 + c
-                sf-cat timp
-                daca n=inv atunci
-                scrie "numarul este palindrom"
-                altfel
-                scrie "nuamrul nu este palindrom"
-                sf-daca
-              </code>
+              intreg n , inv , copie ,c
+              citeste n
+              inv &lt;- 0
+              copie &lt;- n
+              cat timp n!= 0 executa
+              c &lt;- n%10
+              inv &lt;- inv*10 + c
+              sf-cat timp
+              daca n=inv atunci
+              scrie "numarul este palindrom"
+              altfel
+              scrie "nuamrul nu este palindrom"
+              sf-daca
             </pre>
 
           </li>
@@ -323,22 +317,20 @@
           <li> Descompunerea in factori primi a unui numar natural n dat .
             <span> Aplicam algoritmul invatat la matematica : cosideram toate numerele naturale incepand cu 2 ( 2 este primul numar prim ) . Pentru fiecare numar , verificam daca este divizor a lui n . In caz afirmativ , calculam multiplicitatea divizorului in n , impartind succesiv pe n la divizor si calculand numarul de impartiri efectuate , afisand divizorul si multiplicitatea acestuia .</span>
             <pre>
-              <code>
-                intreg n,d,k
-                citeste n
-                d &lt;- 2
-                cat timp n!=1 executa
-                daca n%d=0 atunci
-                k &lt;-0
-                cat timp n%d =0 executa
-                k &lt;- k+1
-                n &lt;- [n/d]
-                sf-cat timp
-                scrie d,k,endl
-                sf-daca
-                d &lt;-d+1
-                sf-cat timp
-              </code>
+              intreg n,d,k
+              citeste n
+              d &lt;- 2
+              cat timp n!=1 executa
+              daca n%d=0 atunci
+              k &lt;-0
+              cat timp n%d =0 executa
+              k &lt;- k+1
+              n &lt;- [n/d]
+              sf-cat timp
+              scrie d,k,endl
+              sf-daca
+              d &lt;-d+1
+              sf-cat timp
             </pre>
           </li>
         </ol>
@@ -348,92 +340,343 @@
           <li> Fiind dat un numar natural n, sa se verifice daca n este prim.
             <span> Un numar natural este prim daca are doar 2 divizori : 1 si el insusi ( are doar divizori improprii). Cu ajutorul unei structuri <i> pentru...executa </i> parcurgem numerele de la 2 la [n/2] . Daca gasim un singur numar care divide pe n inseamna ca n nu este prim. </span>
             <pre>
+              intreg n,d
+              logic prim
+              citeste n
+              prim &lt;- true
+              pentru d &lt;-2,[n/2] executa
+              daca n%d=0 atunci prim &lt;- false
+              sf-pentru
+              daca prim atunci
+              scrie "numar prim"
+              altfel
+              scrie "numarul nu este prim "
+              sf-daca
+            </pre>
+          </li>
+        </ol>
+      </li>
+
+      <li>Determinarea celui mai mare divizor comun . Algoritmul lui Euclid.
+        <ol>
+          <li> Ideea algoritmului lui Euclid :
+            <ul>
+              <li>se imparte primul numar la al doilea , se obtine un cat si un rest . </li>
+              <li> daca restul nu este 0 , se imparte al doilea numar la rest s.a.m.d pana cand restul devine 0</li>
+              <li> ultimul rest diferit de 0 este cel mai mare divizor comun al celor doua numere </li>
+            </ul>
+            <pre>
               <code>
-                intreg n,d
-                logic prim
-                citeste n
-                prim &lt;- true
-                pentru d &lt;-2,[n/2] executa
-                daca n%d=0 atunci prim &lt;- false
-                sf-pentru
-                daca prim atunci
-                scrie "numar prim"
+                intreg a,b,r
+                citeste a,b
+                cat timp b!= 0 executa
+                r &lt;- a%b
+                a &lt;- b
+                b &lt;- r
+                sf-cat timp
+                scrie "cmmdc = " , a
+              </code>
+            </pre>
+          </li>
+
+          <li> Putem determina cel mai mare divizor comun folosind algoritmul prin scaderi repetate
+            Din cel mai mare numar il scadem pe cel mai mic , pana cand numerele devin egale.
+            <pre>
+              <code>
+                intreg a,b
+                citeste a,b
+                cat timp a!=b executa
+                daca a&gt;b atunci
+                a &lt;- a-b
                 altfel
-                scrie "numarul nu este prim "
+                b &lt;- b-a
                 sf-daca
+                sf-cat timp
+                scrie "cmmdc = " , a
               </code>
             </pre>
           </li>
         </ol>
       </li>
 
-        <li>Determinarea celui mai mare divizor comun . Algoritmul lui Euclid.
-          <ol>
-            <li> Ideea algoritmului lui Euclid :
-              <ul>
-                <li>se imparte primul numar la al doilea , se obtine un cat si un rest . </li>
-                <li> daca restul nu este 0 , se imparte al doilea numar la rest s.a.m.d pana cand restul devine 0</li>
-                <li> ultimul rest diferit de 0 este cel mai mare divizor comun al celor doua numere </li>
-              </ul>
-              <pre>
-                <code>
-                  intreg a,b,r
-                  citeste a,b
-                  cat timp b!= 0 executa
-                  r &lt;- a%b
-                  a &lt;- b
-                  b &lt;- r
-                  sf-cat timp
-                  scrie "cmmdc = " , a
-                </code>
-              </pre>
-            </li>
+      <li>Determinare minim/maxim
+        <ol>
+          <li>
+            Se citesc succesiv n numere reale . Sa se determine cea mai mica si cea mai mare valoare citita
+            Prima valoare o vom citi separat si o vom folosi pentru a initializa doua variabile : min si max. Celelalte n-1 valori le vom citi in cadrul unei instructiuni repetitive , de obicei <i> pentru..executa</i> , ultima valoare citita o vom compara cu valorile curente ale variabilelor min si max , modificandu-le in cazul in care minimul este mai mare respectiv maximul este mai mic decat valoarea curenta .
 
-            <li> Putem determina cel mai mare divizor comun folosind algoritmul prin scaderi repetate
-              Din cel mai mare numar il scadem pe cel mai mic , pana cand numerele devin egale.
-              <pre>
-                <code>
-                  intreg a,b
-                  citeste a,b
-                  cat timp a!=b executa
-                  daca a&gt;b atunci
-                  a &lt;- a-b
-                  altfel
-                  b &lt;- b-a
-                  sf-daca
-                  sf-cat timp
-                  scrie "cmmdc = " , a
-                </code>
-              </pre>
-            </li>
-          </ol>
-        </li>
+            <pre>
+              <code>
+                intreg n,x,min,max
+                citeste n,x
+                min &gt;- x
+                max &lt;- x
+                pentru d&lt;-2,n executa
+                citeste x
+                daca min&gt;x atunci min&lt;-x
+                daca max&lt;x atunci max&lt;-x
+                sf-pentru
+                scrie min,max
+              </code>
+            </pre>
+          </li>
+        </ol>
+      </li>
+    </ul>
+    <h3 id="expresii-c++" class="text-center">2.Expresii C++ </h3>
 
-        <li>Determinare minim/maxim
-          <ol>
-            <li>
-              Se citesc succesiv n numere reale . Sa se determine cea mai mica si cea mai mare valoare citita
-              Prima valoare o vom citi separat si o vom folosi pentru a initializa doua variabile : min si max. Celelalte n-1 valori le vom citi in cadrul unei instructiuni repetitive , de obicei <i> pentru..executa</i> , ultima valoare citita o vom compara cu valorile curente ale variabilelor min si max , modificandu-le in cazul in care minimul este mai mare respectiv maximul este mai mic decat valoarea curenta .
 
-              <pre>
-                <code>
-                  intreg n,x,min,max
-                  citeste n,x
-                  min &gt;- x
-                  max &lt;- x
-                  pentru d&lt;-2,n executa
-                  citeste x
-                  daca min&gt;x atunci min&lt;-x
-                  daca max&lt;x atunci max&lt;-x
-                  sf-pentru
-                  scrie min,max
-                </code>
-              </pre>
-
-            </li>
-
-          </ol>
-        </li>
-      </ul>
+    <p> Un <b> tip de date </b> defineste multimea valorilor pe care le poate lua datele de tipul respectiv , modul de prezentare a acestora in memorie , precum si operatiile care se pot efectua cu datele respecctive</p>
+    <div class="block">
+      <div class="label label-info">
+        Tipuri de date
+      </div>
     </div>
-  </section>
+    <table class="table table-bordered">
+      <tr>
+        <th> Tip </th>
+        <th> Domeniu de valori </th>
+      </tr>
+      <th colspan="2" class="text-center"> Tipuri intregi</th>
+      <tr>
+        <td> char </td>
+        <td> [-128,127]</td>
+      </tr>
+      <tr>
+        <td> unsigned char </td>
+        <td> [0 , 255]</td>
+      </tr>
+      <tr>
+        <td> int </td>
+        <td> [-32768,32767]</td>
+      </tr>
+      <tr>
+        <td> unsigned int</td>
+        <td> [0 ,65535]</td>
+      </tr>
+      <tr>
+        <td> long int </td>
+        <td> [-2147483648 , 2147483647]</td>
+      </tr>
+      <tr>
+        <td> unsigned long int</td>
+        <td> [0 , 4294967295]</td>
+      </tr>
+      <th colspan="2" class="text-center"> Tipuri reale</th>
+      <tr>
+        <td> float </td>
+        <td> 3.4E-38 - 304E38</td>
+      </tr>
+      <tr>
+        <td> double </td>
+        <td> 1.7E-308 - 1.7E308</td>
+      </tr>
+      <tr>
+        <td>long double </td>
+        <td> 3.4E-4932 - 1.1E4932</td>
+      </tr>
+    </table>
+
+    <div class="block">
+      <div class="label label-info">
+        Operatori
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <tr>
+        <th> Tip operator </th>
+        <th> Operator </th>
+        <th> Descriere </th>
+      </tr>
+      <tr>
+        <td rowspan="5"> Aritmetici </td>
+        <td> + </td>
+        <td> adunare </td>
+      </tr>
+      <tr>
+        <td> - </td>
+        <td> scadere </td>
+      </tr>
+      <tr>
+        <td> * </td>
+        <td> inmultire </td>
+      </tr>
+      <tr>
+        <td> / </td>
+        <td>  catul impartirii a doua numere </td>
+      </tr>
+      <tr>
+        <td> % </td>
+        <td> restul impartirii a doi intregi </td>
+      </tr>
+      <tr>
+        <td rowspan="6" style="border-top-width:2px"> Relationali </td>
+        <td style="border-top-width:2px"> < </td>
+        <td style="border-top-width:2px"> mai mic </td>
+      </tr>
+      <tr>
+        <td> > </td>
+        <td> mai mare </td>
+      </tr>
+      <tr>
+        <td> <= </td>
+        <td> mai mic sau egal </td>
+      </tr>
+      <tr>
+        <td> >= </td>
+        <td> mai mare sau egal </td>
+      </tr>
+      <tr>
+        <td> == </td>
+        <td> egal egal(verifica egalitatea cand este pus intr-o conditie)</td>
+      </tr>
+      <tr>
+        <td>!=</td>
+        <td> diferit </td>
+      </tr>
+      <tr>
+        <td rowspan="3" style="border-top-width:2px"> Logici </td>
+        <td style="border-top-width:2px"> ! </td>
+        <td style="border-top-width:2px"> negatie logica </td>
+      </tr>
+      <tr>
+        <td> && </td>
+        <td> si logic ( conjunctie logica)</td>
+      </tr>
+      <tr>
+        <td> || </td>
+        <td> sau logic ( disjunctie logica)</td>
+      </tr>
+    </table>
+
+    <div class="block">
+      <div class="label label-info">
+        Functii matemtice
+      </div>
+    </div>
+    <p>Pentru a folosi functiile matematice predefinite trebuie sa declaram si biblioteca <i> math.h</i> . </p>
+    <table class="table table-bordered">
+      <tr>
+        <th> Functia </th>
+        <th> Tipul argumentului </th>
+        <th> Semnificatia rezultatului </th>
+      </tr>
+      <tr>
+        <td> pow(x,y) </td>
+        <td> x,y de tip double </td>
+        <td> x la puterea y </td>
+      </tr>
+      <tr>
+        <td> abs(x)</td>
+        <td> int <br> double </td>
+        <td> valoarea absoluta a argumentului <br> (modulul )</td>
+      </tr>
+      <tr>
+        <td> sqrt(x) </td>
+        <td> double </td>
+        <td> radical din x ( x &ge; 0) </td>
+      </tr>
+      <tr>
+        <td> sin(x) </td>
+        <td> double </td>
+        <td> sinusul lui x</td>
+      </tr>
+      <tr>
+        <td> cos(x) </td>
+        <td> double </td>
+        <td> cosinusul lui x</td>
+      </tr>
+      <tr>
+        <td> arctg(x) </td>
+        <td> double </td>
+        <td> unghiul a carei tangenta este x </td>
+      </tr>
+      <tr>
+        <td> log(x) </td>
+        <td> double </td>
+        <td> logaritm natural din x ( x &ge; 0) </td>
+      </tr>
+      <tr>
+        <td> ceil(x) </td>
+        <td> float </td>
+        <td> cel mai mic intreg &ge; x <br> ( rotunjirea prin adaos)</td>
+      </tr>
+      <tr>
+        <td> floor(x) </td>
+        <td> float </td>
+        <td> cel mai mare intreg &le;  x <br> ( rotunjirea prin lipsa ) </td>
+      </tr>
+    </table>
+
+    <div class="block">
+      <div class="label label-info">
+        Citirea si scrierea datelor
+      </div>
+    </div>
+
+    <span> <b> Citirea datelor </b> se face cu <b> cin </b> ; prototipul ei se gaseste in fisierul <i> iostream </i> sau <i> iostream.h</i>. <b> cin>>variabila;</b> citeste valoarea variabilei </span>
+
+    <div class="block">
+      <div class="label label-danger">
+        Obeservatie!
+      </div>
+
+    </div>
+    <span> <i>cin>>variabila1 ; cin>>variabila2;</i> se poate scrie <i>cin>>variabila1>>variabila2 ; </i>.<b> Scrierea datelor </b> se face cu <b> cout </b> ; prototipul ei se gaseste tot in fisierul <i> iostream </i> sau <i> iostream.h </i><b> cout&lt;&lt;expresie ; </b> tipareste valoarea expresiei </span>
+    <div class="block">
+      <div class="label label-danger">
+        Observatii!
+      </div>
+    </div>
+    <ol>
+      <li> <i> cout&lt;&lt;expresie1  ; cout&lt;&lt;expresie2 ; </i> se poate scrie <i> cout&lt;&lt;expresie1&lt;&lt;expresie2 ;</i> .</li>
+      <li> <i> cout&lt;&lt;expresie&lt;&lt;endl ; </i> sau <i> cout&lt;&lt;expresie&lt;&lt;'\n' ;</i> trece la rand nou dupa afisarea expresiei . </li>
+
+    </ol>
+
+    <div class="block">
+      <div class="label label-info">
+        Structuri
+      </div>
+    </div>
+    <ol>
+      <li> Structuri alternative <br>
+        <p><b> if(</b> expresie <b>) </b> S1 <br> [ <b> else </b> S2 ]</p>
+        <p> Efect : se evalueaza expresia ; daca este diferita de 0 se executa S2 , altfel S2 .</p>
+        <p> Exemplu : minimul dintre doua valori x si y  <br>
+
+          min=x; <br>if(min>y) min=y;  <br>
+          <i>sau</i> <br>
+          if(x&lt;y) min=x ; <br> esle min=y ;
+        </p>
+      </li>
+      <li> Structuri repetitive <br>
+        <ul>
+          <li> Structura repetitiva cu test initial <br>
+            <p><b> while</b> expresie <b> S </b> </p>
+            <p> Efect : cat timp valoarea expresiei este diferita de 0 se executa S .</p>
+          </li>
+          <li> Structura repetitiva cu test final <br>
+            <p> <b> do </b> S <b> while ( </b> expresie <b> ) </b></p>
+            <p> Efect : se executa S cat timp valoarea expresiei este diferita de 0 </p>
+          </li>
+          <li> Structura repetitiva cu numar cunoscut de pasi <br>
+            <p> <b> for ( </b> expresie_init ; expresie_test ; expresie_modif <b> ) </b> S </p>
+            <span> Efect :</span>
+            <ol>
+              <li> se evalueaza <i>expresie_init</i></li>
+              <li> se evalueaza <i> expresie_test </i></li>
+              <li> daca <i> expresie_test </i> are valoarea 0 , se termina instructiunea <i> for </i> ; in caz contrar : <br> se executa S , se evalueaza <i> expresie_modif</i> , se revine la 2 .</li>
+            </ol>
+            <p> Forme uzuale : <br>
+              <b> for(contor=val_init ; contor&lt;=val_fin ; contor++) S <br>
+                for(contor=val_init ; contor&gt;=val_fin ; contor--) S
+              </b>
+            </p>
+            <p> Efect : pentru fiecare valoare a lui contor , pornind de la cea initiala pana la cea finala , se executa S .</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
