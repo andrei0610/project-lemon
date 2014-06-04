@@ -8,19 +8,19 @@
 		A apela o funcţie înseamnă a o executa.<br/>
 		Funcţiile ajută la modularizarea programului, la structurarea acestuia în unităţi logice.<br/>
 		O funcţie se declară în felul următor:
-		<pre  >tip nume(lista_param); // Prototipul functiei</pre>
+		<pre>tip nume(lista_param); //Prototipul functiei</pre>
 		Exemplu:
-		<pre  >int suma(int a, int b);</pre>
-		<code  >lista_param</code> - lista de parametri, despărţiţi prin virgulă, este opţională. <br/>
+		<pre>int suma(int a, int b);</pre>
+		<code>lista_param</code> - lista de parametri, despărţiţi prin virgulă, este opţională. <br/>
 		Parantezele sunt obligatorii. Ele deosebesc funcţiile de alte entităţi C++ (de exemplu, variabile).
-		<pre  >void nimic(); // functie fara parametri</pre>
-		Tipul <code >void</code> reprezintă absenţa tipului. Cu alte cuvinte, funcţiile care nu returnează nicio valoare, au tipul <code  >void</code>.<br/>
-		Funcţiile pot returna valori codului apelant (locul de unde a fost apelată funcţia) prin intermediul instrucţiunii <code  >return</code>. <br/>
+		<pre>void nimic(); //functie fara parametri</pre>
+		Tipul <code>void</code> reprezintă absenţa tipului. Cu alte cuvinte, funcţiile care nu returnează nicio valoare, au tipul <code>void</code>.<br/>
+		Funcţiile pot returna valori codului apelant (locul de unde a fost apelată funcţia) prin intermediul instrucţiunii <code>return</code>. <br/>
 		După declarare, o funcţie trebuie definită undeva în program.
-		<pre  >#include &lt;iostream&gt;
+		<pre>#include &lt;iostream&gt;
 		using namespace std;
 
-		int suma(int, int); // Declarare
+		int suma(int, int); //Declarare
 
 		int main()
 		{
@@ -31,11 +31,11 @@
 		    return 0;
 		}
 
-		int suma(int a, int b) // Definire
+		int suma(int a, int b) //Definire
 		{
 		    int rezultat = a + b;
-		    // Puteam scrie direct
-		    // return a + b;
+		    //Puteam scrie direct
+		    //return a+b;
 		    return rezultat;
 		}</pre>
 		Când declaraţi o funcţie, puteţi omite numele parametrilor (aşa cum am făcut în exemplu), dar trebuie să precizaţi tipul lor. <br/>
@@ -50,7 +50,7 @@
 		<pre>#include &lt;iostream&gt;
 		using namespace std;
 
-		void afiseazaText() // Declarare + Definire
+		void afiseazaText() //Declarare + Definire
 		{
 		    for (int i = 0; i &lt; 5; i++)
 		        cout &lt;&lt; &quot;Hello functions!&quot;;
@@ -58,17 +58,17 @@
 
 		int main()
 		{
-		    // Se va afisa de 5 ori textul:
-		    // Hello functions!
+		    //Se va afisa de 5 ori textul:
+		    //Hello functions!
 		    afiseazaText();
 		    return 0;
 		}</pre>
 		Puteţi declara şi defini o funcţie în acelaşi loc, dar <strong>numai</strong> înainte de <strong>main</strong>, altfel compilatorul nu va recunoaşte funcţia. <br/>
-		Funcţiile <code  >void</code> nu pot fi folosite în expresii, deoarece expresiile au în componenţa lor operatori care aşteaptă valori, ori o funcţie <code  >void</code> nu returnează nicio valoare. <br/>
+		Funcţiile <code>void</code> nu pot fi folosite în expresii, deoarece expresiile au în componenţa lor operatori care aşteaptă valori, ori o funcţie <code>void</code> nu returnează nicio valoare. <br/>
 		O funcţie poate avea orice număr de parametri. <br/>
 		Variabilele declarate într-o funcţie sunt locale, adică sunt vizibile numai în respectiva funcţie. Ele nu pot fi folosite în afara ei (valabil şi pentru parametri). <br/>
 		Argumentele funcţiei sunt datele (variabile, expresii, constante, etc.) transmise funcţiei şi primite de parametrii acesteia.<br/>
-		De exemplu, în apelul <code  >suma(x, y);</code> argumentele sunt variabilele <code  >x</code> şi <code  >y</code>. </p>
+		De exemplu, în apelul <code>suma(x, y);</code> argumentele sunt variabilele <code>x</code> şi <code>y</code>. </p>
 		<p>Parametrii unei funcţii pot avea valori implicite (default). Parametrii default trebuie poziţionaţi la sfârşitul listei de parametri.<br/>
 		După ce aţi declarat un parametru implicit, nu mai aveţi voie să declaraţi parametri normali în continuare acestuia, ci doar parametri impliciţi.
 		<pre >#include &lt;iostream&gt;
@@ -76,17 +76,17 @@
 
 		double arieCerc(double raza, double PI = 3.14)
 		{
-		    return 2 * PI * raza * raza;
+		    return 2*PI*raza*raza;
 		}
 
 		int main()
 		{
-		    cout &lt;&lt; &quot;Aria cercului de raza 2 este &quot; &lt;&lt; arieCerc(2.0) &lt;&lt; '\n'; // PI == 3.14
+		    cout &lt;&lt; &quot;Aria cercului de raza 2 este &quot; &lt;&lt; arieCerc(2.0) &lt;&lt; '\n'; //PI==3.14
 		    cout &lt;&lt; &quot;Aria cercului de raza 2 este &quot; &lt;&lt; arieCerc(2.0, 3.141592);
 		    return 0;
 		}</pre>
 		Se va afişa
-		<pre  >Aria cercului de raza 2 este 25.12
+		<pre>Aria cercului de raza 2 este 25.12
 		Aria cercului de raza 2 este 25.1327</pre>
 		Când nu transmiteţi o valoare parametrului implicit, compilatorul va folosi valoarea implicită, dată de voi.
 	</div>
