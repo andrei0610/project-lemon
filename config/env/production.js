@@ -1,8 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://andrei.c@icloud.com:k86-rGc-Nt3-Cre@kahana.mongohq.com:10074/mds_staging'
-',
+	db: 'mongodb://localhost/project-lemon-dev',
 	assets: {
 		lib: {
 			css: [
