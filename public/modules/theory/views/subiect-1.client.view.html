@@ -8,20 +8,21 @@
       Prin pseudocod intelegem o succesiune de instructiuni. Instructiunile pot fi <strong>declaratii</strong> sau <strong>instructiuni efective</strong> .
       O <strong> declaratie </strong> este formata din unul din cuvintele cheie <strong>intreg</strong>, <strong> real</strong>,<strong>caracter</strong>,<strong>logic</strong> urmat de un sir de variabile separate prin virgula, intelegand ca variabilele au tipul respectiv.
     </span>
-    <br>
-    <div class="label label-info"> Instructiunile efective </div>
+    <div class="block">
+      <div class="label label-info"> Instructiunile efective </div>
+    </div>
     <ol>
-      <li>
-        Instructiuni de citire/scriere
+      <li>Instructiuni de citire/scriere
         <ul>
           <li><strong> citeste</strong> v1,v2,....,vn</li>
           <li><strong> scrie </strong> e1,e2,....,en</li>
         </ul>
-
       </li>
+
       <li>
         Intructiunea <strong> stop </strong>
       </li>
+
       <li>
         Instructiunea de atribuire
         <ul>
@@ -30,65 +31,205 @@
           <li> In cazul atribuirii unei expresiei , mai intai se evalueaza expresia , iar rezultatul se atribuie variabilei</li>
         </ul>
       </li>
-      <li>
-        Instructiunea de ramificare (structura alternativa)
+
+      <li> Instructiunea de ramificare (structura alternativa)
+
         <ul>
           <li><strong> daca</strong> E <strong> atunci </strong> S1</li>
           <li><strong> altfel </strong> S2</li>
           <li><strong> sf-daca </strong></li>
         </ul>
-          <p> Se evalueaza expresia E . Daca E este adevarata atunci se executa instructiunea sau secventa de instructiuni S1. In caz contrar (E este falsa) se executa S2 .</p>
-          <div class="label label-danger">
-            Observatie
-          </div>
-          <span style="display: block"> Instructiunea se poate scrie si fara ramura "altfel" . </span>
-          <ul>
-            <li><strong>daca </strong>E <strong> atunci</strong> S</li>
-            <li><strong> sf-daca </strong></li>
-          </ul>
 
-        </li>
-        <li> Instructiunea repetitiva <strong> cat timp </strong> (structura repetitiva cu test final)
-          <p> <strong> cat timp </strong> E <strong>executa </strong> <br>
-            S                         <br>
-            <strong> sf-cat timp</strong>
-          </p>
-          <p> Dupa cum reiese si din nume , se executa instructiunea/secventa de instructiuni S cat timp expresia E este adevarata .</p>
-        </li>
-        <li>  Instructiunea repetitiva <strong> repeta- pana cand</strong> ( structura repetitiva cu test final)
-          <p> <strong>repeta</strong> <br>
-            S <br>
-            <strong>pana cand</strong> E
-          </p>
-          <p> Se executa repetat  instructiunea/secventa de instructiuni S pana cand expresia E devine adevarata</p>
+        <span> Se evalueaza expresia E . Daca E este adevarata atunci se executa instructiunea sau secventa de instructiuni S1. In caz contrar (E este falsa) se executa S2 .</span>
+
+        <div class="block">
           <div class="label label-danger">
             Observatie
           </div>
-          <p>  Instructiunea/Secventa de instructiuni S se executa cel putin o data , intrucat verificare conditiei de adevar a expresiei E se face la finalul fiecarei executii.</p>
-        </li>
-        <li> Instructiunea repetitiva <strong>pentru </strong> ( structura repetitiva cu un numar cunoscut de pasi )
-          <p> <strong>pentru </strong> contor &lt;- val_initiala , val_finala <strong>executa</strong> <br>
-            S  <br>
-            <strong> sf-pentru</strong>
-          </p>
-          <p> Se executa repetat instructiunea/secventa de instructiuni S pentru fiecare valoare a contorului cuprina intre val_initiala si val_finala .Pentru ca S sa se execute macar o data trebuie ca val_initiala <= val_finala . Numarul de repetari este val_finala - val_initiala + 1 . </p>
+        </div>
+
+        <span style="display: block"> Instructiunea se poate scrie si fara ramura "altfel" . </span>
+
+        <ul>
+          <li><strong>daca </strong>E <strong> atunci</strong> S</li>
+          <li><strong> sf-daca </strong></li>
+        </ul>
+      </li>
+
+      <li> Instructiunea repetitiva <strong> cat timp </strong> (structura repetitiva cu test final)
+        <ul>
+          <li><strong> cat timp </strong> E <strong>executa </strong> </li>
+          <li>S</li>
+          <li><strong> sf-cat timp</strong></li>
+        </ul>
+        <span> Dupa cum reiese si din nume , se executa instructiunea/secventa de instructiuni S cat timp expresia E este adevarata .</span>
+      </li>
+
+      <li>Instructiunea repetitiva <strong> repeta- pana cand</strong> ( structura repetitiva cu test final)
+        <ul>
+          <li><strong>repeta</strong></li>
+          <li>S</li>
+          <li><strong>pana cand</strong> E</li>
+        </ul>
+        <span> Se executa repetat  instructiunea/secventa de instructiuni S pana cand expresia E devine adevarata</span>
+
+        <div class="block">
           <div class="label label-danger">
             Observatie
           </div>
-          <p>Cand pasul contorului este 1 (nu sare valori ) nu se mai scrie .<br>
-            Contorul nu trebuie neaparat sa creasca din 1 in 1. Pasul contorului poate fi specificat dupa val_finala .</p>
-            <p> <strong> pentru </strong> contor &lt;- val_finala , val_initiala &lt;-1 <strong> executa</strong> <br>
-              S <br>
-              <strong> sf-pentru </strong>
-            </p>
-            <p> In cazul acesta contorul porneste de la valoarea mai mare si scade cu cate o unitate pana la valoarea mai mica . Acest exmeplu este util cand vrem , de exemplu , sa afisam numerele intregi cuprinse in intervalul [val_initiala,val_finala] in ordine descrescatoare .</p>
-            <p> <strong> pentru </strong> contor &lt;- val_initiala,val_finala, 2 <strong> executa </strong> <br>
-              S <br>
-              <strong> sf-pentru</strong>
-            </p>
-            <p> In cazul acesta contorul merge din 2 in 2 . </p>
-          </li>
-        </ol>
-      </p>
+        </div>
+
+        <span>  Instructiunea/Secventa de instructiuni S se executa cel putin o data , intrucat verificare conditiei de adevar a expresiei E se face la finalul fiecarei executii.</span>
+      </li>
+
+      <li> Instructiunea repetitiva <strong>pentru </strong> ( structura repetitiva cu un numar cunoscut de pasi )
+        <ul>
+          <li><strong>pentru </strong> contor &lt;- val_initiala , val_finala <strong>executa</strong></li>
+          <li>S</li>
+          <li><strong> sf-pentru</strong></li>
+        </ul>
+
+        <span> Se executa repetat instructiunea/secventa de instructiuni S pentru fiecare valoare a contorului cuprina intre val_initiala si val_finala. Pentru ca S sa se execute macar o data trebuie ca val_initiala = val_finala . Numarul de repetari este val_finala - val_initiala + 1 . </span>
+
+        <div class="block">
+          <div class="label label-danger">
+            Observatie
+          </div>
+        </div>
+
+        <span>Cand pasul contorului este 1 (nu sare valori ) nu se mai scrie. Contorul nu trebuie neaparat sa creasca din 1 in 1. Pasul contorului poate fi specificat dupa val_finala .</span>
+        <ul>
+          <li> <strong> pentru </strong> contor &lt;- val_finala , val_initiala &lt;-1 <strong> executa</strong> </li>
+          <li>S </li>
+          <li><strong> sf-pentru </strong></li>
+        </ul>
+
+        <span> In cazul acesta contorul porneste de la valoarea mai mare si scade cu cate o unitate pana la valoarea mai mica . Acest exmeplu este util cand vrem , de exemplu , sa afisam numerele intregi cuprinse in intervalul [val_initiala,val_finala] in ordine descrescatoare .</span>
+        <ul>
+          <li> <strong> pentru </strong> contor &lt;- val_initiala,val_finala, 2 <strong> executa </strong> </li>
+          <li>S </li>
+          <li><strong> sf-pentru</strong></li>
+        </ul>
+        <span> In cazul acesta contorul merge din 2 in 2 . </span>
+      </li>
+    </ol>
+
+
+    <div class="block">
+      <div class="label label-info">
+        <span>Echivalenta algortimilor</span>
+      </div>
     </div>
-  </section>
+
+    <span> Doi algoritmi sunt echivalenti daca pentru acelasi set de date de intrare returneaza acelasi rezultat. Putem simula o structura repetitiva cu ajutorul unor secvente de instructiuni care contin alte tipuri de structuri repetitive .</span>
+
+    <table class="table table-bordered">
+      <tr class="text-center">
+        <td>
+          Structura repetitiva
+        </td>
+        <td>
+          Structura echivalenta
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row text-center">
+            <strong>repeta</strong>
+          </div>
+          <div class="row text-center">
+            S1
+          </div>
+          <div class="row text-center">
+            <strong>pana cand</strong> E
+          </div>
+        </td>
+        <td>
+          <div class="row text-center">
+            <strong>S1</strong> E
+          </div>
+          <div class="row text-center">
+            <strong>cat timp!</strong> E
+            <strong>executa</strong>
+          </div>
+          <div class="row text-center">
+            <strong>S1</strong> E
+          </div>
+          <div class="row text-center">
+            <strong>sf-cat timp</strong>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row text-center">
+            <strong>cat timp</strong>
+            E
+            <strong>executa</strong>
+          </div>
+          <div class="row text-center">
+            S1
+          </div>
+          <div class="row text-center">
+            <strong>sf-cat timp</strong> E
+          </div>
+        </td>
+        <td>
+          <div class="row text-center">
+            <strong>daca</strong>
+            E
+            <strong>atunci</strong>
+          </div>
+          <div class="row text-center">
+            <strong>repeta</strong>
+          </div>
+          <div class="row text-center">
+            <strong>S1</strong> E
+          </div>
+          <div class="row text-center">
+            <strong>pana cand !</strong>
+            E
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row text-center">
+            <strong>pentru</strong>
+            <span>contor &lt- val_initiala, val_finala</span>
+          </div>
+          <div class="row text-center">
+            <strong>executa</strong>
+          </div>
+          <div class="row text-center">
+            <strong>S1</strong>
+          </div>
+          <div class="row text-center">
+            <strong>sf-pentru</strong>
+          </div>
+        </td>
+        <td>
+          <div class="row text-center">
+            <span>contor &lt- val_initiala</span>
+          </div>
+          <div class="row text-center">
+            <strong>cat timp</strong>
+            <span>contor &lt= val_finala</span>
+            <strong>executa</strong>
+          </div>
+          <div class="row text-center">
+            <strong>S1</strong>
+          </div>
+          <div class="row text-center">
+            <span>contor &lt- contor + 1</span>
+          </div>
+          <div class="row text-center">
+            <strong>sf-cat timp</strong>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+</section>

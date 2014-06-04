@@ -38,7 +38,7 @@
 
 	<!-- HTML5 Shim -->
 	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
 <body class="ng-cloak">
@@ -51,13 +51,11 @@
 		</section>
 	</section>
 
-	<div id="footer" data-ng-include="'/modules/core/views/footer.client.view.html'" class="navbar navbar-fixed-bottom navbar-inverse">
-</div>
 
 
 	<!--Embedding The User Object-->
 	<script type="text/javascript">
-		var user = {{ user | json | safe }};
+	var user = {{ user | json | safe }};
 	</script>
 
 	<!--Application JavaScript Files-->
@@ -68,6 +66,7 @@
 	<!--Livereload script rendered -->
 	<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
 	{% endif %}
-</body>
 
+	<!-- <footer data-ng-include="'/modules/core/views/footer.client.view.html'" class="navbar navbar-fixed-bottom navbar-inverse"></footer> -->
+</body>
 </html>
