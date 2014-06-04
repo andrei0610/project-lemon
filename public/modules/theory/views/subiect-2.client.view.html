@@ -25,15 +25,15 @@
 		int main()
 		{
 		    int x, y;
-		    cout &lt;&lt; &quot;Da-mi doua numere intregi: &quot;;
+		    cout&lt;&lt;&quot;Da-mi doua numere intregi: &quot;;
 		    cin &gt;&gt; x &gt;&gt; y;
-		    cout &lt;&lt; &quot;Suma lor este &quot; &lt;&lt; suma(x, y);
+		    cout&lt;&lt;&quot;Suma lor este &quot;&lt;&lt;suma(x, y);
 		    return 0;
 		}
 
 		int suma(int a, int b) //Definire
 		{
-		    int rezultat = a + b;
+		    int rezultat=a + b;
 		    //Puteam scrie direct
 		    //return a+b;
 		    return rezultat;
@@ -50,10 +50,11 @@
 		<pre>#include &lt;iostream&gt;
 		using namespace std;
 
-		void afiseazaText() //Declarare + Definire
+		//Declarare + Definire
+		void afiseazaText()
 		{
-		    for (int i = 0; i &lt; 5; i++)
-		        cout &lt;&lt; &quot;Hello functions!&quot;;
+		    for (int i=0; i &lt; 5; i++)
+		        cout&lt;&lt;&quot;Hello functions!&quot;;
 		}
 
 		int main()
@@ -74,20 +75,137 @@
 		<pre >#include &lt;iostream&gt;
 		using namespace std;
 
-		double arieCerc(double raza, double PI = 3.14)
+		double arieCerc(double raza, double PI=3.14)
 		{
 		    return 2*PI*raza*raza;
 		}
 
 		int main()
 		{
-		    cout &lt;&lt; &quot;Aria cercului de raza 2 este &quot; &lt;&lt; arieCerc(2.0) &lt;&lt; '\n'; //PI==3.14
-		    cout &lt;&lt; &quot;Aria cercului de raza 2 este &quot; &lt;&lt; arieCerc(2.0, 3.141592);
+		    cout&lt;&lt;&quot;Aria cercului de raza 2 este &quot;&lt;&lt;arieCerc(2.0)&lt;&lt;'\n'; //PI==3.14
+		    cout&lt;&lt;&quot;Aria cercului de raza 2 este &quot;&lt;&lt;arieCerc(2.0, 3.141592);
 		    return 0;
 		}</pre>
 		Se va afişa
 		<pre>Aria cercului de raza 2 este 25.12
 		Aria cercului de raza 2 este 25.1327</pre>
 		Când nu transmiteţi o valoare parametrului implicit, compilatorul va folosi valoarea implicită, dată de voi.
+<!--Aici incepe pagina 2. Schimba aici tagu pentru subiectu 2.-->
+
+
+		<p><a class=""> Transmiterea prin valoare si prin referinta</a> </p>
+		<p>Atunci când transmiteţi argumente (şi sunt variabile) unei funcţii, transmiteţi de fapt o copie a acelor variabile. <br/>
+		Aceasta este transmiterea prin valoare (<em>pass by value</em>). <br/>
+		Orice modificare a parametrilor unei funcţii este vizibilă numai în acea funcţie. <br/>
+		Variabilele - folosite ca argumente - rămân nemodificate.
+		<pre>#include &lt;iostream&gt;
+		using namespace std;
+
+		void modifica(int a)
+		{
+		    a=a + 5;
+		    cout&lt;&lt;&quot;a are valoarea: &quot;&lt;&lt;a&lt;&lt;'\n';
+		}
+
+		int main()
+		{
+		    int x=1;
+		    cout&lt;&lt;&quot;x inainte de apel: &quot;&lt;&lt;x&lt;&lt;'\n';
+		    modifica(x);
+		    cout&lt;&lt;&quot;x dupa apel: &quot;&lt;&lt;x;
+		    return 0;
+		}</pre>
+		Output:
+		<pre>x inainte de apel: 1
+		a are valoarea: 6
+		x dupa apel: 1</pre>
+		O funcţie poate returna decât o singură valoare printr-un <code>return</code>, ca la matematică. <br/>
+		Uneori vrem ca o funcţie să poată returna mai multe valori. Un mod prin care putem obţine acest lucru este transmiterea prin referinţă (<em>pass by reference</em>). <br/>
+		Atunci când transmiteţi prin referinţă, parametrii funcţiei alterează direct conţinutul variabilelor argumente (nu mai există nicio copie). <br/>
+		Ca să transmiteţi prin referinţă folosiţi ampersand (<code>&amp;</code>) între tipul parametrului şi numele acestuia. <br/>
+		Parametrii referinţă acceptă numai variabile. <strong>NU</strong> acceptă constante (deoarece nu pot fi alterate)!
+		<pre>#include &lt;iostream&gt;
+		using namespace std;
+
+		void modifica(int&amp; a) //Nu uitati de ampersand !
+		{
+		    a=a + 5;
+		    cout&lt;&lt;&quot;a are valoarea: &quot;&lt;&lt;a&lt;&lt;'\n';
+		}
+
+		int main()
+		{
+		    int x=1;
+		    cout&lt;&lt;&quot;x inainte de apel: &quot;&lt;&lt;x&lt;&lt;'\n';
+		    modifica(x);
+		    cout&lt;&lt;&quot;x dupa apel: &quot;&lt;&lt;x;
+		    return 0;
+		}</pre>
+		Output:
+		<pre>x inainte de apel: 1
+		a are valoarea: 6
+		x dupa apel: 6</pre>
+		</p>
+
+		<p>!<u> Observatie </u> : <strong>Vectorii</strong> se transmit prin referinţă! <br>
+		<pre>#include &lt;iostream&gt;
+		using namespace std;
+
+		void modifica(int v[], int l)
+		{
+		    for (int i=0; i &lt; l; i++)
+		        v[i] += 5; //v[i]=v[i] + 5;
+		}
+
+		int main()
+		{
+		    int w[]={1, 2, 3, 4}, k=4;
+		    modifica(w, k);
+
+		    for (int i=0; i &lt; k; i++)
+		        cout &lt;&lt;w[i]&lt;&lt;' ';
+
+		    return 0;
+		}</pre>
+		Output:
+		<pre>6 7 8 9</pre>
+		Observaţi cum se transmite un vector ca parametru. <br/>
+		Numărul de elemente poate lipsi (valabil doar pentru prima dimensiune). <br/>
+		Dacă aş fi avut o matrice de <code>2 x 3</code>, atunci aş fi scris:
+		<pre>void modifica(int v[][3], ...) ...</pre>
+		</p><br/>
+
+<!-- Aici incepe pagina 3 -->
+		<p><a class="in_box"> Functii recursive </a> </p>
+		<p>O funcţie care se autoapelează se numeşte <em>recursivă</em>. <br/>
+		Aveţi grijă ca funcţia să aibă o condiţie de terminare, altfel puteţi crea o repetiţie infinită. <br/>
+		Parametrii funcţiilor şi variabilele locale sunt încărcate, stocate, pe Stivă (o regiune din memorie structurată pe principiul stivei, LIFO), iar în cazul unei funcţii recursive infinite, Stiva se poate umple repede (<em>stack overflow</em>) cauzând un crash al programului. <br/>
+		Factorialul unui număr poate fi calculat cu o funcţie recursivă (deşi se poate face acelaşi lucru şi cu un loop).
+		<pre  >#include &lt;iostream&gt;
+		using namespace std;
+
+		int fact(int n)
+		{
+			//Conditia de terminare
+		    if (n==0) 
+		        return 1;
+		    else
+		        return n*fact(n-1);
+		}
+
+		int main()
+		{
+		    cout&lt;&lt;fact(0)&lt;&lt;'\n';
+		    cout&lt;&lt;fact(3)&lt;&lt;'\n';
+		    cout&lt;&lt;fact(8)&lt;&lt;'\n';
+		    return 0;
+		}</pre>
+		Output:
+		<pre>1
+		6
+		40320</pre>
+		Ca să înţelegeţi mai bine mecanismul recursivităţii vizionaţi acest clip de pe Youtube:
+		<p style="text-align:center;"><iframe width="640" height="360" src="http://www.youtube.com/embed/k0bb7UYy0pY" frameborder="0" allowfullscreen></iframe></p>
+		</p><br/>
 	</div>
 </section>
