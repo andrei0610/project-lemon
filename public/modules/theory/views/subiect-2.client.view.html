@@ -147,7 +147,7 @@
 		x dupa apel: 6</pre>
 		</p>
 
-		<p>!<u> Observatie </u> : <strong>Vectorii</strong> se transmit prin referinţă! <br>
+		<p>!<u> Observatie </u>: <strong>Vectorii</strong> se transmit prin referinţă! <br>
 		<pre>#include &lt;iostream&gt;
 		using namespace std;
 
@@ -172,11 +172,15 @@
 		Observaţi cum se transmite un vector ca parametru. <br/>
 		Numărul de elemente poate lipsi (valabil doar pentru prima dimensiune). <br/>
 		Dacă aş fi avut o matrice de <code>2 x 3</code>, atunci aş fi scris:
-		<pre>void modifica(int v[][3], ...) ...</pre>
+		<pre>void modifica(int v[][3],...)...</pre>
 		</p><br/>
 
 <!-- Aici incepe pagina 3 -->
-		<p><a class="in_box"> Functii recursive </a> </p>
+		<div class="block">
+		  <div class="label label-info">
+		    <span>Functii recursive</span>
+		  </div>
+		</div>
 		<p>O funcţie care se autoapelează se numeşte <em>recursivă</em>. <br/>
 		Aveţi grijă ca funcţia să aibă o condiţie de terminare, altfel puteţi crea o repetiţie infinită. <br/>
 		Parametrii funcţiilor şi variabilele locale sunt încărcate, stocate, pe Stivă (o regiune din memorie structurată pe principiul stivei, LIFO), iar în cazul unei funcţii recursive infinite, Stiva se poate umple repede (<em>stack overflow</em>) cauzând un crash al programului. <br/>
@@ -207,5 +211,155 @@
 		Ca să înţelegeţi mai bine mecanismul recursivităţii vizionaţi acest clip de pe Youtube:
 		<p style="text-align:center;"><iframe width="640" height="360" src="http://www.youtube.com/embed/k0bb7UYy0pY" frameborder="0" allowfullscreen></iframe></p>
 		</p><br/>
+<!-- Aici incepe pagina 4 -->
+  		<h3 id="#backtracking" class="text-center">2.Backtracking</h3>
+	 	<p><b> Backtracking </b> este o metoda de parcurgere sistematica a spatiului solutiilor posibile al unei probleme. <br>
+		Este o metoda generala de programare, si poate fi adaptata pentru orice problema pentru care dorim sa obtinem toate solutiile posibile, sau sa selectam o solutie optima, din multimea solutiilor posibile. <br>
+		Backtracking este insa si cea mai costisitoare metoda din punct de vedere al timpului de executie. </p>
+	    <p> In general vom modela solutia problemei ca un vector <b> v=(v<sub>1</sub>, v<sub>2</sub>,...,v<sub>n</sub> )</b> in care fiecare element <b>v<sub>k</sub></b> apartine unei multimi finite si ordonate <b>S<sub>k</sub> cu k=1,n</b>. In anumite cazuri multimile <b>S<sub>1</sub>, S<sub>2</sub>,...,S<sub>n</sub></b> pot fi identice.<br>
+		Procedam astfel: <br>
+		<ol>
+		<li> La fiecare pas k pornim de la o solutie partiala v=(v<sub>1</sub>, v<sub>2</sub>,...,v<sub>n</sub> ) si incercam sa extindem aceasta solutie adaugand un nou element la sfarsitul vectorului. </li>
+		<li> Cautam in multimea S<sub>k</sub> un nou element.</li>
+		<li> Daca exista un element neselectat inca, verificam daca acest element indeplineste conditiile impuse de problema, numite <b>conditii de continuare </b>.</li>
+		<li> Daca sunt respectat conditiile de continuare, adaugam elementul solutiei partiale.</li>
+		<li> Verificam daca am obtinut o solutie completa.
+		       <ul style="list-style-type:square">
+			     <li> daca am obtinut o solutie completa o afisam si se reia algoritmul de la pasul 1</li>
+				 <li> daca nu am obtinut o solutie, k &lt;- k+1 si se reia algoritmul de la pasul 1</li>
+			   </ul> </li>
+	    <li> Daca nu sunt indeplinite conditiile de continuare se reia algoritmul de la pasul 2.</li>
+		<li> Daca nu mai exista niciun element neverificat in multime S<sub>k</sub> inseamna ca nu mai avem nicio posibilitate din acest moment, sa construim solutia finala asa ca trebuie sa modificam alegerile facute in prealabil, astfel k&lt;-k-1 si se reia problema de la pasul 1.</li>
+		</ol> <br>
+		Revenirea in caz de insucces sau pentru generarea tuturor solutiilor problemei, a condus la denumirea de "backtracking" a metodei, traducerea aproximativa ar fi "revenire in urma".
+		</p> <br>
+
+		<div class="block">
+		  <div class="label label-info">
+		    <span>Exemplu: PERMUTARI</span>
+		  </div>
+		</div>
+	    <p> Sa se genereze toate permutarile primelor <b>n</b> numere naturale. <br>
+		 Vom selecta pe rand solutiile problemei in vectorul <b> v=(v<sub>1</sub>, v<sub>2</sub>,...,v<sub>n</sub> )</b> unde <b>v<sub>k</sub> </b> este din <b>S<sub>k</sub></b>. <br>
+		 Sa facem urmatoarele observatii: 
+		 <ol>
+		 <li> Pentru aceasta problema toate multimile <b>S<sub>k</sub></b> sunt identice, cu <b>S<sub>k</sub>={1,2,3,...,n}</b>. La pasul <b>k</b> selectam un element din multimea <b>S<sub>k</sub></b>. </li>
+		 <li> Intrucat in cadrul unei permutari <b> elementele nu au voie sa se repete </b> aceasta conditie reprezinta conditia de continuare a problemei. </li>
+		 <li> Obtinem o solutie in momentul in care completam vectorul cu <b>n</b> elemente.</li>
+		 </ol> 
+	    </p>
+	    <p> Exemplu pentru n=3.<br>
+		<b>S<sub>1</sub> = S<sub>2</sub> = S<sub>3</sub> = {1,2,3}.</b> <br>
+		Solutiile sunt: (1, 2, 3) (1, 3, 2) (2, 1, 3) (2, 3, 1) (3, 1, 2) (3, 2, 1). <br>
+		<!-- Din nu stiu care motiv, nu merge srcu asta. -->
+		<img src="public/modules/theory/images/permutari.png"></img>
+		</p>
+<!-- Aici incepe pagina 5. -->
+		<h3 id="#grafuri" class="text-center">3.Grafuri</h3>
+		<div class="block">
+		  <div class="label label-info">
+		    <span>Grafuri neorientate</span>
+		  </div>
+		</div>
+		<p>
+		Definitie: Se numeste <b>graf neorientat</b> G o pereche ordonata de multimi (X,U), unde X este o multime finita si nevida de elemente, iar U o multime de perechi formate cu elemente distincte din multimea X.
+	    <br>
+		G= (V,U) <br>
+		<u>Exemplu </u> : <br>
+		V = {1,2,3,4,5,6,7} <br> U = {(1,2),(2,3),(3,7),(7,5),(1,6),(7,1),(2,5),(2,7)} <br>
+		
+		<img src="images/ex-graf-neorientat.jpg"  > Fig.1  </img>
+		</p>
+		
+		<p>
+		<a class="purple_text"> Terminologie </a> <br>
+		<ul style="list-style-type:circle">
+		<li> Elementele multimii V se numesc <b> noduri </b> sau <b>varfuri </b> . Multimea V se mai numeste si multimea nodurilor sau varfurilor. </li>
+		<li> Elementele multimii U se numesc <b>muchii</b>. Multimea U se mai numeste si multimea muchiilor.</li>
+		<li> Ordinul grafului reprezinta numarul de noduri ale grafului. </li>
+		<li> Numim <b>noduri adiacente</b> orice pereche de noduri care formeaza o muchie. Fiecare din cele doua noduri spunem, ca sunt incidente cu muchia pe care o formeaza.</li>
+	     <br>
+		Exemplu: <br>
+		Nodul 1 este adiacent cu nodurile 2,6,7; nodul 5 este adiacent cu nodurile 2,7 etc. <br>
+		Nodurile 3,7 sunt incidente cu muchia (3,7). <br> <br>
+	    <li> Nodurile <b>vecine </b> ale unui nod sunt toate nodurile adiacente cu el. </li>
+		<li> Se numesc muchii incidente doua muchii care au extremitate comuna.</li> <br>
+		Exemplu: <br>
+		Muchiile (1,2) si (2,7) sunt incidente avand ca extremitate comuna nodul 2. 
+		</ul> <br><br>
+		<u> Definitie  </u> :<b>Gradul unui nod x </b> al grafului este egal cu numarul muchiilor incidente cu nodul si se noteaza cu <b>d(x) </b>.
+	    <br>
+		Exemplu: <br>
+
+	    d(1)=3;d(2)=4;d(3)=2 etc. (Fig.1)<br><br>
+		<li> Se numeste <b>nod terminal </b> un nod care are gradul egal cu 1. </li>
+		<li> Se numeste un <b>nod izolat</b> un nod care are gradul 0. </li>
+		</ul>
+		</p>
+		
+		<p> <a class="orange_text"> Teoreme </a> <br>
+		<ol>
+		<li> Numarul total de grafuri neorientate cu n noduri este: <br> <img src="images/gr-neor-1.jpg"></img></li>
+		<li> Suma gradelor tuturor nodurilor unui garf neorientat este egala cu dublul nuamrului de muchii. <br> <img src="images/gr-neor-2.jpg"></img></li>
+		<li> Daca gaful G neorientat are n noduri, n>2, atunci cel putin 2 noduri au acelasi grad.   </li>
+		<li> Pentru orice graf neorientat numarul nodurilor de gard impar este par.</li>
+		<li> Numarul minim de muchii pe care trebuie sa le aiba n graf neorientat cu n noduri , ca sa nu existe noduri izolate este: <br> <img src="images/gr-neor-5.jpg"></img> </li>
+		</ol>
+		</p>
+		
+		<p> <a class="orange_text"> Lanturi intr-un graf neorientat </a> <br><br>
+		<u>Definitie </u> : Se numeste <b>lant</b> intr-un graf neorientat o succesiune de varfuri cu proprietatea ca intre oricare doua varfuri alaturate exista o muchie. 
+		<br>
+		Exemplu: <br> {6,1,7,5,2,3} reprezinta un  lant. (Fig.1)<br><br>
+		<a class="purple_text"> Terminologie</a>
+		<ul style="list-style-type:circle">
+		<li> Numim <b>lant elementar </b> o succesune de varfuri care respecta proprietatea de lant si in care oricare doua varfuri sunt distincte. In caz contrar lantul se numeste <b>neelementar</b>.</li>
+		<li> Se numeste <b>lant simplu </b> o succesiune de  varfuri cu proprietatea ca fiecare muchie este vizitata o singura data. </li>
+		<li> Se numeste lant <b>compus</b> un lant in care o muchie este vizitata de cel putin doua ori. </li>
+		<li> Se numeste <b>ciclu </b> int-un lant o succesiune de varfuri cu proprietatea ca primul nod coincide cu ultimul nod.</li>
+		
+		</ul>
+		<br>
+		
+	    Exemplu:  <br>
+
+	   {6,1,7,2} reprezinta un lant elementar. <br>
+
+	  {6,1,7,5,2,7,3} reprezinta lant neelementar. <br>
+
+	  {2,3,7,5} reprezinta lant simplu. <br>
+
+	  {5,2,7,5,2,3} reprezinta lant compus. <br>
+
+	  {5,2,7,5} reprezinta ciclu intr-un lant. (Fig.1)
+		
+		</p> <br>
+		
+		<p>
+		<a class="orange_text"> Grafuri derivate</a> <br><br>
+		<u>Definitie </u> : Se numeste <b>graf partial </b> notat cu Gp=(V,U'), cu proprietatea ca multimea U' de perechi de varfuri este inclusa in multimea U.
+		<br>
+		G={V,U} <br>
+
+	   V={1,2,3,4,5,6,7} <br>
+
+	   U={(1,6),(1,7),(2,3),(2,5),(3,7),(5,7)} <br>
+	   <img src="images/ex-graf-neorientat.jpg"> </img> <br>
+	   
+	   <u> Definitie </u> : Un <b>subgraf</b> al unui graf neorientat G=(V,U) este un graf H=(V',U') astfel incât V' inclus in V şi U' conţine toate muchiile din U care au ambele extremităţi în V' (poate fi graful iniţial sau se obţine din acesta prin eliminarea unor vârfuri şi a muchiilor incidente cu acestea). 
+		
+		</p> <br>
+		
+		<p><a class="orange_text"> Grafuri speciale </a> <br> <br>
+		<b>Graful null </b> este garful in care multimea U este vida. <br>
+		<img src="images/graf-neor-null.jpg"> </img> <br>
+		<b>Graful complet cu n noduri </b> este graful care are intre oricare doua noduri adiacente o muchie  .<br>
+		<img src="images/graf-neor-complet.jpg"> </img> <br>
+		<b>Graful conex </b> este un graf care are intre oricare doua noduri un lant care sa le uneasca. <br>
+		<img src="images/graf-neor-conex.jpg"> </img>
+		
+		</p>
+		
+		</p>
 	</div>
 </section>
