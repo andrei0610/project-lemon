@@ -1,14 +1,14 @@
 <section data-ng-controller="Subiect3Controller">
 	<div id="content">
 		<h2 class="text-center">Subiectul III</h2>
-		<span>In subiectul III se reiau parti de teorie din subiectul II , insa se pune mai mult accent pe rezolvarea de probleme . De aceea , partea aceasta va cuprinde teorie privind lucrul cu <a href="#cit_fis"> fisiere</a> si exemple de <a href="#prob_rez">probleme rezolvate </a>.</span>
+		<span>In subiectul III se reiau parti de teorie din subiectul II, insa se pune mai mult accent pe rezolvarea de probleme. De aceea, partea aceasta va cuprinde teorie privind lucrul cu <a href="#cit_fis"> fisiere</a> si exemple de <a href="#prob_rez">probleme rezolvate </a>.</span>
 
 		<h3 id="#arbori" class="text-center">1.Fisiere</h3>
 	    <p>
 		Un fisier este o colecie de date indicata printr-un nume si o extensie. Numele este despartit de extensie prin punct. Avantajul lucrului cu fisiere 
 	    este evident, datele rezultate in urma executiei unui program putand fi salvate. <br><br>
-		Pentru lucrul cu fisiere text in C++ se adaug o bibliotec standard si anume <b> &lt;fstream.h&gt; </b> sau <b> &lt; fstream &gt;</b> . <br>
-		Aceasta biblioteca lucreaza cu fluxuri (stream-uri) : 
+		Pentru lucrul cu fisiere text in C++ se adaug o bibliotec standard si anume <b> &lt;fstream.h&gt; </b> sau <b> &lt; fstream &gt;</b>. <br>
+		Aceasta biblioteca lucreaza cu fluxuri (stream-uri): 
 		<ul style="list-style-type:circle">
 		<li> <b>ifstream  </b> - flux de intrare ( citire )</li>
 		<li> <b>ofstream </b> - flux de iesire ( scriere )</li>
@@ -23,11 +23,11 @@
 			<li>scrierea datelor intr-un fisier text </li> 
 			<li>adaugarea datelor intr-un fisier text </li>
 		</ul>
-		Fisierele se declara ca variabile de tipul ifstream , ofstream sau fstream si nume_fisier . De regula , fisierul din care citim se declara <i> ifstream f</i> si cel in care scriem <i> ofstream g </i> , dar ele pot avea alte nume ( in loc de f si g) .<br>
-		 <br>Dupa declarare , fisierele trebuie deschise : <i>f.open("nume_fisier.in")</i> si <i>g.open("nume_fisier.out")</i> . <br>
-		 <br>Vom citi datele cu <i>f&gt;&gt;variabila</i> in loc sa folosim <i>cin </i> , si afisam cu <i>g&lt;&lt;variabila </i> in loc sa folosim <i>cout </i> .
+		Fisierele se declara ca variabile de tipul ifstream, ofstream sau fstream si nume_fisier. De regula, fisierul din care citim se declara <i> ifstream f</i> si cel in care scriem <i> ofstream g </i>, dar ele pot avea alte nume ( in loc de f si g).<br>
+		 <br>Dupa declarare, fisierele trebuie deschise: <i>f.open("nume_fisier.in")</i> si <i>g.open("nume_fisier.out")</i>. <br>
+		 <br>Vom citi datele cu <i>f&gt;&gt;variabila</i> in loc sa folosim <i>cin </i>, si afisam cu <i>g&lt;&lt;variabila </i> in loc sa folosim <i>cout </i>.
 		 <br><br>
-		 Este important ca la finalul programului sa inchidem fisierele  : <i> f.close(); </i> si <i>g.close();</i>
+		 Este important ca la finalul programului sa inchidem fisierele : <i> f.close(); </i> si <i>g.close();</i>
 		</p>
 
 <!-- Aici incepe partea 2 -->
@@ -38,9 +38,9 @@
 		citeşte numerele din fişierul <b>NR.TXT</b> şi afişează pe ecran, separate prin câte un spaţiu, în 
 		ordine crescătoare, toate numerele <b>naturale nenule</b> din fişier. Dacă nu există astfel de 
 		numere se va afişa pe ecran mesajul <b>NU EXISTA</b> <br>
-		<b>Exemplu :</b> dacă fişierul NR.TXT conţine numerele: -3 -10 0 <u>7</u> -5 <u>7</u> <u>51</u> -800 <u>6</u> <u>3798</u>, 
-		atunci pe ecran se va afişa: 6 7 7 51 3798  . <br>
-		Rezolvare : <br>
+		<b>Exemplu:</b> dacă fişierul NR.TXT conţine numerele: -3 -10 0 <u>7</u> -5 <u>7</u> <u>51</u> -800 <u>6</u> <u>3798</u>, 
+		atunci pe ecran se va afişa: 6 7 7 51 3798 . <br>
+		Rezolvare: <br>
 		<pre><code>  
 		  #include&lt;fstream.h&gt;
 		  ifstream f("bac.txt");
@@ -64,8 +64,8 @@
 		   <b>100</b> de numere naturale, fiecare număr având cel mult <b>4</b> cifre. Scrieţi un program <b>C/C++</b> 
 		   care citeşte toate numerele din fişier şi afişează pe ecran, separate prin câte un spaţiu, în 
 		   ordine crescătoare, toate numerele din fişier care au cel puţin 3 cifre. Dacă fişierul nu 
-		   conţine astfel de numere se va afişa pe ecran mesajul <b>NU EXISTA </b> . <br>
-		   Rezolvare : <br>
+		   conţine astfel de numere se va afişa pe ecran mesajul <b>NU EXISTA </b>. <br>
+		   Rezolvare: <br>
 		   <pre><code>
 		#include&lt;fstream.h&gt;
 		    int main()
@@ -103,13 +103,13 @@
 		</li> <br>
 
 		<li> Subprogramul <b>nule</b> are doi parametri: <b>a</b>, prin care primeşte un tablou unidimensional cu 
-		     maximum 100 de numere întregi, cu cel mult 4 cifre fiecare şi <b>n</b> , numărul de elemente din 
+		     maximum 100 de numere întregi, cu cel mult 4 cifre fiecare şi <b>n</b>, numărul de elemente din 
 		     tablou. Subprogramul rearanjează elementele tabloului unidimensional astfel încât toate 
 		     valorile nule să se afle la sfârşitul tabloului. Ordinea în cadrul secvenţei de elemente nenule 
-		     poate fi oricare. Tabloul modificat este furnizat tot prin parametrul <b>a</b> . <br>
+		     poate fi oricare. Tabloul modificat este furnizat tot prin parametrul <b>a</b>. <br>
 		     <b>Exemplu:</b> dacă n=6, a=(12,0,0,-3,-8,0), după apel, acesta ar putea fi: 
-		     a=(12,-3,-8,0,0,0) . <br> 
-			 Rezolvare : <br> 
+		     a=(12,-3,-8,0,0,0). <br> 
+			 Rezolvare: <br> 
 			 <pre><code>
 			#include&lt;iostream.h>
 
