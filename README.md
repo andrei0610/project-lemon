@@ -2,6 +2,7 @@ Project-lemon este o aplicatie web dezvoltata in intregime in JavaScript cu care
 * [Punguta Cristina](https://github.com/cristinapunguta)
 * [Lungu Teodora](https://github.com/teoo)
 * [Ilie Stefan](https://github.com/thekoplegend)
+* [Stoicescu Cristian]()
 * [Constantinescu Andrei](https://github.com/andrei0610)
 
 ## Prerequisites
@@ -17,7 +18,7 @@ Pentru a putea dezvolta aplicatia trebuie sa ai instalate urmatoarele:
   ```
 * [MongoDB](http://www.mongodb.org)
 
-  ```
+  ```bash
   # OSX
   $ brew install mongodb
 
@@ -30,13 +31,13 @@ Pentru a putea dezvolta aplicatia trebuie sa ai instalate urmatoarele:
   ```
 * [Bower](http://bower.io)
 
-  ```
+  ```bash
   $ npm install -g bower
   ```
 
 * [Grunt](http://www.www.gruntjs.com)
 
-  ```
+  ```bash
   $ sudo npm install -g grunt-cli
   ```
 ## Cum poti contribui
