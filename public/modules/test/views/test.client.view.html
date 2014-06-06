@@ -1,0 +1,148 @@
+<section data-ng-controller="TestController">
+	<h3>Test Subiectul I</h3>
+<script src=="modules/test/text1.js" charset="utf-8">
+
+</script>
+	<p>
+		<form name="test1" target="target" >
+			<ol>
+				<li id="q1">Variabila x este de tip real. Care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul real memorat în variabila x aparţine intervalului (5,8]?
+					<br>
+					<input type="radio" name="answ1" value="q1a" ><span id="1a"> (x&lt;8) && (x&gt;=5) </span> <br>
+					<input type="radio" name="answ1" value="q1b" > <span id="1b"> (x&lt;=8) || (x&gt;5) </span> <br>
+					<input type="radio" name="answ1" value="q1c" > <span id="1c" >(x&gt;8) || (x&lt;=5) </span><br>
+					<input type="radio" name="answ1" value="q1d" > <span id="1d" > (x&lt;=8) && (x&gt;5)</span>
+
+				</li> <br>
+
+				<li>Variabilele x şi y sunt tip int. Care dintre expresiile C/C++ de mai jos are valoarea 1 dacă şi numai dacă valorile întregi nenule memorate în variabilele x şi y sunt egale?
+					<br>
+					<input type="radio" name="answ2" value="a" id="2a"> (x%y==0) && (y%x==0) && (x*y>0) <br>
+					<input type="radio" name="answ2" value="b"> (x&lt;=y) && (y&lt;x) <br>
+					<input type="radio" name="answ2" value="c"> (x&lt;=y) || (y%lt;=x) <br>
+					<input type="radio" name="answ2" value="d">  x*x==y*y
+
+				</li> <br>
+
+				<li>Care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul real memorat în variabila x se află în intervalul (-2,2)? <br>
+
+					<input type="radio" name="answ3" value="a"> x*x-4&lt;=0  <br>
+					<input type="radio" name="answ3" value="b"> 4-x*x&gt;0 <br>
+					<input type="radio" name="answ3" value="c"> (2&lt;x)&&(x&lt;-2) <br>
+					<input type="radio" name="answ3" value="d"> (x-2)*(x+2)&gt;0
+
+				</li> <br>
+
+				<li> Care este rezultatul evaluării expresiei C/C++ :  11*3/2*2/3 ? <br>
+
+					<input type="radio" name="answ4" value="a"> 2 <br>
+					<input type="radio" name="answ4" value="b"> 10 <br>
+					<input type="radio" name="answ4" value="c"> 2.75 <br>
+					<input type="radio" name="answ4" value="d"> 11
+
+				</li> <br>
+
+				<li> Care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă variabilele x şi y memorează două numere naturale pare consecutive? <br>
+
+					<input type="radio" name="answ5" value="a"> (x-y==2) && (y-x==2)  <br>
+					<input type="radio" name="answ5" value="b"> (x==2) && (y==4) <br>
+					<input type="radio" name="answ5" value="c"> x-y==2 <br>
+					<input type="radio" name="answ5" value="d"> ((x-y==2) || (y-x==2)) && (x%2==0)
+
+				</li> <br>
+
+				<li>Care din următoarele afirmaţii despre operatorii din C/C++ este falsă? </pre> <br>
+
+					<input type="radio" name="answ6" value="a">  > este operator relaţional  <br>
+					<input type="radio" name="answ6" value="b"> % este operator aritmetic <br>
+					<input type="radio" name="answ6" value="c"> && este operator logic <br>
+					<input type="radio" name="answ6" value="d"> &lt;= este operator logic
+
+				</li><br>
+
+				<li>Se consideră variabila a care memorează un număr cu exact 6 cifre. Care dintre expresiile C/C++ de mai jos are ca valoare numărul format din cele două cifre din mijloc ale valorii memorate în a? <br>
+
+					<input type="radio" name="answ7" value="a">(a%100)/100 <br>
+					<input type="radio" name="answ7" value="b">a/100%100 <br>
+					<input type="radio" name="answ7" value="c">a/1000+a%1000 <br>
+					<input type="radio" name="answ7" value="d"> a/100%10+a/1000%10
+
+				</li><br>
+
+				<li>Se considera urmatorul algoritm : <br>
+					<pre><code>
+						intreg a,b,p,q
+						citeste a,b
+						cat timp a!=0 executa
+						daca a%2=1 atunci
+						q&lt;- q+p*b
+						sf-daca
+						a&lt;- [a/2]
+						p&lt;- p*c
+						sf-cat timp
+						scrie q
+					</code></pre>
+					Ce se va afisa pentru a=12 si b=100 ?
+					<form>
+						<input type="radio" name="answ8" value="a"> 1200 <br>
+						<input type="radio" name="answ8" value="b"> 112 <br>
+						<input type="radio" name="answ8" value="c"> 300 <br>
+						<input type="radio" name="answ8" value="d"> 4
+					</form>
+				</li><br>
+
+				<li>Fie n un numar natural ,n&gt;1 .Se considera urmatorul program pseudocod : <br>
+					<pre><code>
+						intreg n,i,S
+						citeste n
+						S&lt;- 0
+						i&lt;-1
+						cat timp S+i&lt;=n executa
+						S&lt;- S+i
+						I&lt;- i+1
+						sf-cat timp
+						scrie S
+					</code></pre>
+					Ce se va afisa pentru n=17 ? <br>
+					<form>
+						<input type="radio" name="answ9" value="a"> 17 <br>
+						<input type="radio" name="answ9" value="b"> 15 <br>
+						<input type="radio" name="answ9" value="c"> 102 <br>
+						<input type="radio" name="answ9" value="d"> 153
+					</form>
+				</li><br>
+
+				<li> Se considera urmatorul program pseudocod :
+					<pre><code>
+						intreg n,s
+						citeste n
+						s&lt;-0
+						repeta
+						daca n%10=s atunci
+						n&lt;- s+1
+						sf-daca
+						n&lt;- [n/10]
+						pana cand n=0
+						scrie s
+					</code></pre>
+					Ce se va afisa pentru n=261305 ?<br>
+					<form>
+						<input type="radio" name="answ10" value="a"> 3 <br>
+						<input type="radio" name="answ10" value="b"> 0 <br>
+						<input type="radio" name="answ10" value="c"> 2 <br>
+						<input type="radio" name="answ10" value="d"> 1
+
+
+						<input type ="submit" value="Submit" id="buton"> <input type="reset" value="Reset" style="float:right"> </input>
+					</form>
+				</li>
+			</ol>
+		</form>
+	</p>
+
+
+
+
+
+
+</section>
