@@ -1,10 +1,12 @@
-<section data-ng-controller="FeedbacksController" data-ng-init="findOne()">
-	<div class="page-header">
-		<div class="alert alert-danger">
-			<span><strong>Nu sunteti logat!</strong> Va rungam sa va logati <a href="#!/signin">aici</a>.</span>
-		</div>
-		<h1>{{feedback.title}}</h1>
+<section data-ng-controller="FeedbacksController" data-ng-hide="authentication.user">
+	<div class="page-header alert alert-danger">
+		<span><strong>Nu sunteti logat!</strong> Va rungam sa va logati <a href="#!/signin">aici</a>.</span>
 	</div>
+</section>
+
+<section data-ng-controller="FeedbacksController" data-ng-init="findOne()">
+
+	<h1>{{feedback.title}}</h1>
 	<div class="pull-right" data-ng-show="authentication.user._id == feedback.user._id">
 		<a class="btn btn-primary" href="/#!/feedbacks/{{feedback._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
