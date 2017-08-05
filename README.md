@@ -6,6 +6,8 @@ Project-lemon este o aplicatie web dezvoltata in intregime in JavaScript cu care
 * [Constantinescu Andrei](https://github.com/andrei0610)
 
 ## Prerequisites
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/andreiconstantinescu/project-lemon.svg)](https://greenkeeper.io/)
 Pentru a putea dezvolta aplicatia trebuie sa ai instalate urmatoarele:
 * [Node.js](http://www.nodejs.org)
 
